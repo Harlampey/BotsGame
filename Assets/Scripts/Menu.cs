@@ -11,7 +11,8 @@ public class Menu : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI levelText;
 
     private void Start() {
-        //if (PlayerPrefs.HasKey("LastLevel")) continueButton.SetActive(true); else continueButton.SetActive(false);
+        if (!PlayerPrefs.HasKey("LastLevel")) PlayerPrefs.SetInt("LastLevel", 1);
+            
         coinsCountText.text = PlayerPrefs.GetInt("CollectedCoins").ToString();
         levelText.text = "Level " + PlayerPrefs.GetInt("LastLevel").ToString();
     }
