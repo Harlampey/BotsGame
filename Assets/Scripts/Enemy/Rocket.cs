@@ -2,6 +2,7 @@
 
 public class Rocket : MonoBehaviour {
     public float Speed;
+    [SerializeField] private GameObject explodeParticle;
 
     private void Start() {
         Invoke("DestroyRocket", 10f);
@@ -11,10 +12,12 @@ public class Rocket : MonoBehaviour {
     }
 
     private void DestroyRocket() {
+        Vector3 pos = transform.position;
+        Instantiate(explodeParticle, pos, Quaternion.identity);
         Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other) {
-        if(other.gameObject.layer == 12) Destroy(gameObject); //Destroying on entered to static objects
+        if (other.gameObject.layer == 12) DestroyRocket(); //Destroying on entered to static objects
     }
 }

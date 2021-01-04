@@ -10,6 +10,8 @@ public class Menu : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI coinsCountText;
     [SerializeField] private TextMeshProUGUI levelText;
 
+    
+
     private void Start() {
         if (!PlayerPrefs.HasKey("LastLevel")) PlayerPrefs.SetInt("LastLevel", 1);
             

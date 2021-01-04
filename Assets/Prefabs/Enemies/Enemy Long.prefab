@@ -3551,6 +3551,8 @@ MonoBehaviour:
   healthBar: {fileID: 4024208222797356117}
   maxHealthBarSize: 10
   Health: 4
+  AddHealBonus: {fileID: 7946275336932761281, guid: 1cd0f43be339e5245970d6b6711b8cc0,
+    type: 3}
   character: {fileID: 6535798414637192561}
   charaterMaterials:
   - {fileID: 2100000, guid: fd499113dcf23cf4cb7a2ba0c26ba76a, type: 2}

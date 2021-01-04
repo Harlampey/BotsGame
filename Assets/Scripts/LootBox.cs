@@ -16,6 +16,7 @@ public class LootBox : MonoBehaviour {
      * 2: Rotation Speed
      * 3: Long Weapon
      * 4: Coin
+     * 5: Heart
      */
     private void OnTriggerEnter(Collider other) {
         if (other.tag == "PlayerWeapon") {
@@ -25,40 +26,21 @@ public class LootBox : MonoBehaviour {
     }
 
     private void SpawnItem() {
-        //&& !Level.isAdditionalWeaponPicked && !Level.isFastRotationPicked && !Level.isLongWeaponPicked
         if (itemID == 0 && !emptyBox ) {
             int id = Random.Range(0, items.Length);
-            //while (id == 1 && !Level.isAdditionalWeaponPicked || id == 2 && !Level.isFastRotationPicked || id == 3 && !Level.isLongWeaponPicked) {
-            //    id = Random.Range(0, items.Length);
-            //}
             Vector3 pos = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
             GameObject spawnedItem = Instantiate(items[id], pos, Quaternion.identity);
             spawnedItem.GetComponent<Rigidbody>().AddForce(Vector3.up * spawnForce);
-            //if (id != 4) RegisterItemAsPicked(id);
         } else if (!emptyBox) {
             Vector3 pos = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
             GameObject spawnedItem = Instantiate(items[itemID - 1], pos, Quaternion.identity);
             spawnedItem.GetComponent<Rigidbody>().AddForce(Vector3.up * spawnForce);
-            //RegisterItemAsPicked(itemID);
         } else {
             Vector3 pos = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
-            GameObject spawnedItem = Instantiate(items[4], pos, Quaternion.identity);
+            GameObject spawnedItem = Instantiate(items[Random.Range(4, 6)], pos, Quaternion.identity);
             spawnedItem.GetComponent<Rigidbody>().AddForce(Vector3.up * spawnForce);
         }
         Vector3 boxPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         Instantiate(destroyedBox, boxPos, Quaternion.identity);
-    }
-    private void RegisterItemAsPicked(int itemID) {
-        switch (itemID) {
-            case 1:
-                Level.isAdditionalWeaponPicked = true;
-                break;
-            case 3:
-                Level.isAdditionalWeaponPicked = true;
-                break;
-            case 2:
-                Level.isAdditionalWeaponPicked = true;
-                break;
-        }
     }
 }

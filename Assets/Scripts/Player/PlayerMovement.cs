@@ -5,11 +5,16 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed;
     [SerializeField] private Joystick joystick;
-    [SerializeField] private ParticleSystem upgradePatricleEffect;
+    [SerializeField] private ParticleSystem upgradePatricleEffect, addHealParticleEffect;
     [SerializeField] private Animator cameraAnimator;
 
     private CharacterController controller;
     private Vector3 moveDirection = Vector3.zero;
+    private float gravity = 10f;
+    public bool canMove;
+
+    [HideInInspector] public Transform portal;
+    private float toPortalTranslateSpeed = 4f;
 
     [Space]
     [SerializeField] private Image[] hearts;
@@ -21,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator animator;
     void Start() {
+        canMove = true;
         if (!joystick) joystick = FindObjectOfType<DynamicJoystick>();
         if (!cameraAnimator) cameraAnimator = Camera.main.GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
@@ -35,8 +41,13 @@ public class PlayerMovement : MonoBehaviour
             moveDirection = transform.TransformDirection(moveDirection) * speed;
         }
 
-        moveDirection.y -= Time.deltaTime * 10f;
-        controller.Move(moveDirection * Time.deltaTime);
+        moveDirection.y -= Time.deltaTime * gravity;
+        if(canMove) controller.Move(moveDirection * Time.deltaTime);
+
+        if (portal) {
+            canMove = false;
+            transform.position = Vector3.MoveTowards(transform.position, portal.position, toPortalTranslateSpeed * Time.deltaTime);
+        }
     }
     public void ShowItemPickEffect() {
         upgradePatricleEffect.Play();
@@ -54,6 +65,14 @@ public class PlayerMovement : MonoBehaviour
             Level.Lose();
         }
         hearts[Heal].color = disableHeartColor;
+    }
+    public void AddHeal() {
+        if (Heal < 4) { //4 is max heal
+            Heal++;
+            hearts[Heal - 1].color = activeHeartColor;
+            addHealParticleEffect.Play();
+        }
+        
     }
     private void PushRagdoll() {
         character.transform.parent = null;

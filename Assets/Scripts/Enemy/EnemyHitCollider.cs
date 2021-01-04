@@ -17,6 +17,7 @@ public class EnemyHitCollider : MonoBehaviour {
     [SerializeField] private RectTransform healthBar;
     [SerializeField] private float maxHealthBarSize = 8;
     [SerializeField] private float Health = 3;
+    [SerializeField] private GameObject AddHealBonus;
 
     [Space]
     [SerializeField] private GameObject character;
@@ -63,12 +64,19 @@ public class EnemyHitCollider : MonoBehaviour {
     private void Kill() {
 
         Level.RemoveEnemyIconFromList(enemyType);
+        
+        if (Random.Range(0,2) == 1) {
+            Vector3 pos = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
+            GameObject spawnedItem = Instantiate(AddHealBonus, pos, Quaternion.identity);
+            spawnedItem.GetComponent<Rigidbody>().AddForce(Vector3.up * spawnForce);
 
-        if (Random.Range(0, 100) <= spawnItemChance) {
+        } else if (Random.Range(0, 100) <= spawnItemChance) {
             Vector3 pos = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
             GameObject spawnedItem = Instantiate(items[Random.Range(0, items.Length)], pos, Quaternion.identity);
             spawnedItem.GetComponent<Rigidbody>().AddForce(Vector3.up * spawnForce);
         }
+
+        
 
 
         enemyMovement.Kill();

@@ -2718,9 +2718,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnObject: {fileID: 4828252461248873778, guid: 7add5af78175b2b4b9c795652b55182a,
     type: 3}
-  interval: 7.5
+  interval: 3.5
   minDelay: 3
-  maxDelay: 8
+  maxDelay: 5
   positions:
   - {x: 0, y: 5, z: 60}
   - {x: 14, y: 5, z: 60}
@@ -4720,6 +4720,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MainObjects
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428040996727729176, guid: 04462d456df8f5f41ac8d484a92a62cb,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428040996727729176, guid: 04462d456df8f5f41ac8d484a92a62cb,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428040996727729176, guid: 04462d456df8f5f41ac8d484a92a62cb,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428040996727729176, guid: 04462d456df8f5f41ac8d484a92a62cb,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428040996727729176, guid: 04462d456df8f5f41ac8d484a92a62cb,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428040996727729176, guid: 04462d456df8f5f41ac8d484a92a62cb,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4560508579028539539, guid: 04462d456df8f5f41ac8d484a92a62cb,
         type: 3}
@@ -8307,6 +8337,8 @@ MonoBehaviour:
   healthBar: {fileID: 920046072685914441}
   maxHealthBarSize: 8
   Health: 25
+  AddHealBonus: {fileID: 7946275336932761281, guid: 1cd0f43be339e5245970d6b6711b8cc0,
+    type: 3}
   character: {fileID: 367728454423223573}
   charaterMaterials:
   - {fileID: 2100000, guid: fd499113dcf23cf4cb7a2ba0c26ba76a, type: 2}
