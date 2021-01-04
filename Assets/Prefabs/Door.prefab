@@ -93,7 +93,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1, z: 0.35}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8359849159581116706
 MonoBehaviour:
@@ -107,7 +107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 269bd1181ff3f03498cbbb2a4dd97106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Level3
 --- !u!1001 &7424678750844676188
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -161,6 +160,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4342038022037604, guid: d92be02a90149e64d94ca3a2f20cd645, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198745650043104178, guid: d92be02a90149e64d94ca3a2f20cd645,
+        type: 3}
+      propertyPath: SizeModule.curve.minMaxState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198745650043104178, guid: d92be02a90149e64d94ca3a2f20cd645,
+        type: 3}
+      propertyPath: SizeModule.y.minMaxState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198745650043104178, guid: d92be02a90149e64d94ca3a2f20cd645,
+        type: 3}
+      propertyPath: SizeModule.z.minMaxState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198745650043104178, guid: d92be02a90149e64d94ca3a2f20cd645,
+        type: 3}
+      propertyPath: SizeModule.curve.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198745650043104178, guid: d92be02a90149e64d94ca3a2f20cd645,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].value
+      value: 0.72686195
+      objectReference: {fileID: 0}
+    - target: {fileID: 198745650043104178, guid: d92be02a90149e64d94ca3a2f20cd645,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198745650043104178, guid: d92be02a90149e64d94ca3a2f20cd645,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198745650043104178, guid: d92be02a90149e64d94ca3a2f20cd645,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198745650043104178, guid: d92be02a90149e64d94ca3a2f20cd645,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outSlope
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

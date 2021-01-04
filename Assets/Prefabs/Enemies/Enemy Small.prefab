@@ -1535,6 +1535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8590f7334da2354496e7c9103e942f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyType: rapper
   items:
   - {fileID: 5212144555417984255, guid: 6aefa1fdfac83f94781d09eff1cf9dd2, type: 3}
   - {fileID: 7946275336932761281, guid: 02b204980941da948b731841fd815ab8, type: 3}
