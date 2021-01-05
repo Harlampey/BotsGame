@@ -4322,7 +4322,10 @@ MonoBehaviour:
   speed: 12
   joystick: {fileID: 0}
   upgradePatricleEffect: {fileID: 324706070}
+  addHealParticleEffect: {fileID: 0}
   cameraAnimator: {fileID: 0}
+  canMove: 0
+  portal: {fileID: 0}
   hearts: []
   activeHeartColor: {r: 0, g: 0, b: 0, a: 0}
   disableHeartColor: {r: 0, g: 0, b: 0, a: 0}
@@ -11953,7 +11956,7 @@ RectTransform:
   m_GameObject: {fileID: 8704624406586957236}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 8704624406123246434}
   - {fileID: 8704624405522395572}
